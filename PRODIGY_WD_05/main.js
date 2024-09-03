@@ -48,3 +48,16 @@ const api = {
   
     return `${day} ${date} ${month} ${year}`;
   }
+
+  document.addEventListener("DOMContentLoaded", function() {
+    function updateDateTime() {
+      const now = new Date();
+      const options = { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' };
+      const formattedDate = now.toLocaleDateString('en-US', options);
+      
+      document.querySelector('.date').textContent = formattedDate;
+    }
+  
+    updateDateTime();
+  });
+  
